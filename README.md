@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Ecommerce Frontend - Next.js
 
-## Getting Started
+Este proyecto corresponde al desarrollo de la interfaz de usuario (Frontend) para el sistema básico de Ecommerce solicitado en la evaluación. Está construido utilizando **Next.js** (App Router) y estilizado con **Tailwind CSS** para ofrecer una experiencia fluida, responsiva y con un diseño moderno en modo oscuro.
 
-First, run the development server:
+El sistema se conecta de manera directa a una API RESTful desarrollada en Express.js alojada en la nube, permitiendo una gestión CRUD completa de los productos en tiempo real.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Características Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Catálogo Interactivo (GET):** Listado de productos en una cuadrícula responsiva que consume datos dinámicos desde el backend en Render.
+* **Formulario de Registro (POST):** Permite añadir nuevos artículos enviando los datos estructurados al servidor, donde se valida la información y se le asigna de manera automática una imagen mediante una API externa.
+* **Edición del Catálogo (PUT):** Formulario dinámico adaptado para actualizar la información de productos existentes por su ID.
+* **Remoción Segura (DELETE):** Eliminación física de productos de la base de datos con actualización inmediata de la interfaz de usuario.
+* **Modo Oscuro Integrado:** Paleta de colores optimizada para legibilidad y accesibilidad visual (`zinc-900` / `indigo-600`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tecnologías Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+* **Framework:** Next.js (Versión 15+)
+* **Estilos:** Tailwind CSS (Diseño responsivo y adaptivo)
+* **Empaquetador Local:** Webpack (Configurado para máxima compatibilidad con sistemas Windows)
+* **Entorno de Ejecución:** Node.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Estructura del Código Fuente (`src/app`)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+├── src/
+│   └── app/
+│       ├── page.js             # Vista del Catálogo Principal (Listar / Eliminar)
+│       ├── layout.js           # Estructura Global y Barra de Navegación Simétrica
+│       ├── globals.css         # Configuraciones de Tailwind CSS
+│       ├── nuevo/
+│       │   └── page.js         # Formulario para Crear Nuevos Productos (POST)
+│       └── editar/
+│           └── [id]/
+│               └── page.js     # Formulario Dinámico para Actualizar Productos (PUT)
